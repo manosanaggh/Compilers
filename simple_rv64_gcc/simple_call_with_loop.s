@@ -23,7 +23,7 @@ square(int*, unsigned int):
         nop
         ld      s0,40(sp) # Load previous s0
         addi    sp,sp,48 # Free the 6 words allocated by the callee
-        jr      ra # return
+        jr      ra # return from square
 main:
         addi    sp,sp,-16 # Allocating 2 words at the stack for the caller saves
         sd      ra,8(sp) # Save ra (caller)
@@ -37,4 +37,4 @@ main:
         ld      ra,8(sp) # Load ra
         ld      s0,0(sp) # Load s0
         addi    sp,sp,16 # Free the 2 words allocated by the caller
-        jr      ra # return 0
+        jr      ra # return from main
